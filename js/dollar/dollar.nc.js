@@ -396,7 +396,7 @@ $['Dom'] = {
 		}
 		
 		if (typeof css_property == 'object') {
-			$.Each(css_property, function(key, value){
+			$.Each(css_property, function(value, key){
 				_foo(key, value);
 			});
 		}

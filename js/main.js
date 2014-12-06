@@ -20,7 +20,9 @@ $.Dom.addEvent(window, 'load', function(){
 		});
 	});
 	
-	var dice = new PerudoDice();
+	var dice = new PerudoDice({
+		'game-area': $.Dom.id('index')
+	});
 	
 	// Swipe
 	(function(){
@@ -28,7 +30,7 @@ $.Dom.addEvent(window, 'load', function(){
 			x: null,
 			y: null
 		};
-		var prc = 0.75;
+		var prc = 0.60;
 		window.innerHeight
 		$.Dom.addEvent(document.body, 'mousedown', function(event){
 			start.x = event.pageX;
@@ -47,12 +49,15 @@ $.Dom.addEvent(window, 'load', function(){
 		var timeout = 'longpress';
 		var delay = 750;
 		$.Dom.addEvent(document.body, 'mousedown', function(event){
+			dice.setRemove(event, timeout);
 			$.Timeout.set(timeout, function(){
 				dice.remove(event);
+				dice.setRemove();
 			}, delay);
 		});
 		$.Dom.addEvent(document.body, 'mouseup', function(event){
 			$.Timeout.clear(timeout);
+			dice.setRemove();
 		});
 	})()
 	

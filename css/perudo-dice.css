@@ -49,3 +49,79 @@ section[role="region"] > header:first-child {
 section[role="region"] article header {
 	background-color: transparent;
 }
+
+
+/**
+ * The Game
+ */
+
+body {
+	font-family: sans-serif;
+  user-select: none;
+  -moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.die {
+  position: absolute;
+    width: 1em;
+    height: 1em;
+	margin-top: -0.5em;
+	margin-left: -0.5em;
+    background-color: white;
+    border-radius: 0.2em;
+  line-height: 1em;
+  text-align: center;
+  font-size: 500%;
+  box-shadow: -0.02em -0.02em 0.01em black inset;
+  transition: top 0.5s ease, left 0.5s ease, font-size 0.5s ease
+}
+.die:active{
+	background-color: red;
+  transition: background-color 0.75s ease;
+}
+.die .bullet {
+	position: absolute;
+  width: 0.25em;
+  height: 0.25em;
+  margin-top: -0.125em;
+  margin-left: -0.125em;
+  border-radius: 0.25em;
+  background-color: black;
+  box-shadow: -0.01em -0.01em 0.01em white inset;
+}
+.die:active .bullet {
+	box-shadow: -0.01em -0.01em 0.01em red inset;
+  transition: box-shadow 0.75s ease;
+}
+.die .bullet.cc {
+	top: 50%;
+  left: 50%;
+}
+.die .bullet.tl {
+	top: 20%;
+  left: 20%;
+}
+.die .bullet.tr {
+	top: 20%;
+  left: 80%;
+}
+.die .bullet.bl {
+	top: 80%;
+  left: 20%;
+}
+.die .bullet.br {
+	top: 80%;
+  left: 80%;
+}
+.die .bullet.cr {
+	top: 50%;
+  left: 20%;
+}
+.die .bullet.cl {
+	top: 50%;
+  left: 80%;
+}
+
+
