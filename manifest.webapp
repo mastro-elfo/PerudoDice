@@ -1,0 +1,14 @@
+{
+	"name": "Perudo Dice",
+	"version": "0.0",
+	"description": "Dice to play the game perudo on your device",
+	"launch_path": "/PerudoDice/index.html",
+	"icons": {
+	},
+	"developer": {
+		"name": "Francesco Michienzi",
+		"url": "http://mastro-elfo.github.io"
+	},
+	"default_locale": "en",
+	"type": "web"
+}
