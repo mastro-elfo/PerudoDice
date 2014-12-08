@@ -1,4 +1,76 @@
 
+// TODO: add to dollar
+$.Gesture = {};
+$.Gesture.swipe = function (element, options) {
+	if (typeof element == 'string') {
+		element = $.Dom.id(element);
+	}
+	this.element = element;
+	this.options = options || {
+		length: 200,
+		delay: 150,
+		id: 'swipe-timeout',
+		acceptance: 20
+	};
+	this.start = {
+		x: null,
+		y: null
+	};
+	var self = this;
+	$.Dom.addEvent(element, 'mousedown', function(event){
+		event.preventDefault();
+		event.stopPropagation();
+		self.start.x = event.clientX;
+		self.start.y = event.clientY;
+		$.Timeout.set(self.options.id, function(){
+			self.start.x = null;
+			self.start.y = null;
+		}, self.options.delay);
+	});
+	$.Dom.addEvent(element, 'mousemove', function(event){
+		event.preventDefault();
+		event.stopPropagation();
+		if (self.start.x !== null && self.start.y !== null) {
+			var delta = {
+				x: event.clientX - self.start.x,
+				y: event.clientY - self.start.y
+			};
+			delta.ax = Math.abs(delta.x);
+			delta.ay = Math.abs(delta.y);
+			if (delta.ax > delta.ay && delta.ax > self.options.length) {
+				if (delta.ay /2 < self.options.acceptance) {
+					$.Dom.fireEvent(self.element, 'swipe', {
+						dir: delta.x > 0? 'right': 'left',
+						target: event.target
+					});
+				}
+			}
+			else if (delta.ay > self.options.length){
+				if (delta.ax /2 < self.options.acceptance) {
+					$.Dom.fireEvent(self.element, 'swipe', {
+						dir: delta.y > 0? 'down': 'up',
+						target: event.target
+					});
+				}
+			}
+		}
+	});
+	$.Dom.addEvent(element, 'mouseup', function(event){
+		event.preventDefault();
+		event.stopPropagation();
+		self.start.x = null;
+		self.start.y = null;
+		$.Timeout.clear(self.options.id);
+	});
+	$.Dom.addEvent(element, 'mouseleave', function(event){
+		event.preventDefault();
+		event.stopPropagation();
+		self.start.x = null;
+		self.start.y = null;
+		$.Timeout.clear(self.options.id);
+	});
+}
+
 $.Dom.addEvent(window, 'load', function(){
 	$.L10n.setLanguage($.L10n.sniff().substring(0, 2));
 	// $.L10n.setLanguage('de');
@@ -25,7 +97,11 @@ $.Dom.addEvent(window, 'load', function(){
 	});
 	
 	// Swipe
-	(function(){
+	$.Gesture.swipe(document.body);
+	$.Dom.addEvent(document.body, 'swipe', function(event){
+		dice.scramble(event.detail.dir);
+	});
+	/*(function(){
 		var start = {
 			x: null,
 			y: null
@@ -41,7 +117,7 @@ $.Dom.addEvent(window, 'load', function(){
 				dice.scramble();
 			}
 		});
-	})();
+	})();*/
 	
 	
 	// Long press

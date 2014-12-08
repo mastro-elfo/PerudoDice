@@ -1,4 +1,6 @@
 
+// TODO: when deleting a die it disappear without transition
+
 /**
  * Constructor
  * param options:
@@ -13,7 +15,7 @@ var PerudoDice = function (options) {
 	this._setRemove = null;
 };
 
-PerudoDice.prototype.scramble = function () {
+PerudoDice.prototype.scramble = function (dir) {
 	var self = this;
 	// all dice should go out of the screen
 	$.Each(this._dice, function(die){

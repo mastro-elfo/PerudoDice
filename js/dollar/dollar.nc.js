@@ -289,7 +289,7 @@ $['Dom'] = {
 		if(typeof element == 'string') {
 			element = $.Dom.id(element);
 		}
-		var event = new CustomEvent(event_name, data);
+		var event = new CustomEvent(event_name, {'detail': data});
 		element.dispatchEvent(event);
 	},
 	
