@@ -2,7 +2,7 @@
 	"name": "Perudo Dice",
 	"version": "0.0",
 	"description": "Dice to play the game perudo on your device",
-	"launch_path": "/PerudoDice/index.html",
+	"launch_path": "/index.html",
 	"icons": {
 	},
 	"developer": {
