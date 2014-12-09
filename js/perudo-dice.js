@@ -61,20 +61,16 @@ PerudoDice.prototype.setRemove = function (event, timeoutId) {
 	}
 }
 
-PerudoDice.prototype.remove = function (event) {
+PerudoDice.prototype.remove = function (index) {
 	var self = this;
-	if ($.Dom.hasClass(event.target, 'die')) {
-		// TODO: also mouseup should be over the same die as mousedown
-		var index = parseInt(event.target.getAttribute('data-index'));
-		$.Each(this._dice, function(die, key){
-			if (die._index == index) {
-				die.remove();
-				self._dice.splice(key, 1);
-				return false;
-			}
-			return true;
-		});
-	}
+	$.Each(this._dice, function(die, key){
+		if (die._index == index) {
+			die.remove();
+			self._dice.splice(key, 1);
+			return false;
+		}
+		return true;
+	});
 };
 
 PerudoDice.prototype.getDiceNumber = function () {
@@ -108,9 +104,14 @@ PerudoDice.prototype.setDiceNumber = function(value) {
 			y: '50%'
 		}
 	];
+	var self = this;
 	for (var i=0; i<value; i++) {
 		this._dice[i] = new Die(i, position[i]);
 		$.Dom.inject(this._dice[i]._element, this._options['game-area']);
+		new $.Gesture.longPress(this._dice[i]._element);
+		$.Dom.addEvent(this._dice[i]._element, 'longpress', function(event){
+			self.remove(event.target.getAttribute('data-index'));
+		});
 	}
 }
 
