@@ -18,101 +18,111 @@ $.Gesture.swipe = function (element, options) {
 		x: null,
 		y: null
 	};
-	var self = this;
-	var events = {
-		'start': function(event){
-			event.preventDefault();
-			event.stopPropagation();
-			self.start.x = event.clientX;
-			self.start.y = event.clientY;
-			if (event.touches) {
-				self.start.x = event.touches[0].clientX;
-				self.start.y = event.touches[0].clientY;
-			}
-			$.Timeout.set(self.options.id, function(){
+	(function(self){
+		var events = {
+			'start': function(event){
+				self.start.x = event.clientX;
+				self.start.y = event.clientY;
+				if (event.touches) {
+					self.start.x = event.touches[0].clientX;
+					self.start.y = event.touches[0].clientY;
+				}
+				$.Timeout.set(self.options.id, function(){
+					self.start.x = null;
+					self.start.y = null;
+				}, self.options.delay);
+				// DEBUG
+				//$.Dom.inject($.Dom.element('div', {
+				//	'style': 'position: fixed;top:'+event.clientY+'px;left:'+event.clientX+'px;width:1em;height:1em;background-color:rgba(0,0,0,0.5);border-radius:1em;'
+				//}), document.body);
+				// /DEBUG
+			},
+			'move': function(event){
+				if (self.start.x !== null && self.start.y !== null) {
+					var delta = {
+						x: event.clientX - self.start.x,
+						y: event.clientY - self.start.y
+					};
+					if (event.touches) {
+						delta.x = event.touches[0].clientX - self.start.x;
+						delta.y = event.touches[0].clientY - self.start.y;
+					}
+					delta.ax = Math.abs(delta.x);
+					delta.ay = Math.abs(delta.y);
+					if (delta.ax > delta.ay && delta.ax > self.options.length) {
+						if (delta.ay /2 < self.options.acceptance) {
+							self.start.x = null;
+							self.start.y = null;
+							$.Dom.fireEvent(self.element, 'swipe', {
+								dir: delta.x > 0? 'right': 'left',
+								target: event.target
+							});
+						}
+					}
+					else if (delta.ay > self.options.length){
+						if (delta.ax /2 < self.options.acceptance) {
+							self.start.x = null;
+							self.start.y = null;
+							$.Dom.fireEvent(self.element, 'swipe', {
+								dir: delta.y > 0? 'down': 'up',
+								target: event.target
+							});
+						}
+					}
+				}
+			},
+			'end': function(event){
 				self.start.x = null;
 				self.start.y = null;
-			}, self.options.delay);
-			// DEBUG
-			//$.Dom.inject($.Dom.element('div', {
-			//	'style': 'position: fixed;top:'+event.clientY+'px;left:'+event.clientX+'px;width:1em;height:1em;background-color:rgba(0,0,0,0.5);border-radius:1em;'
-			//}), document.body);
-			// /DEBUG
-		},
-		'move': function(event){
-			event.preventDefault();
-			event.stopPropagation();
-			if (self.start.x !== null && self.start.y !== null) {
-				var delta = {
-					x: event.clientX - self.start.x,
-					y: event.clientY - self.start.y
-				};
-				if (event.touches) {
-					delta.x = event.touches[0].clientX - self.start.x;
-					delta.y = event.touches[0].clientY - self.start.y;
-				}
-				delta.ax = Math.abs(delta.x);
-				delta.ay = Math.abs(delta.y);
-				if (delta.ax > delta.ay && delta.ax > self.options.length) {
-					if (delta.ay /2 < self.options.acceptance) {
-						self.start.x = null;
-						self.start.y = null;
-						$.Dom.fireEvent(self.element, 'swipe', {
-							dir: delta.x > 0? 'right': 'left',
-							target: event.target
-						});
-					}
-				}
-				else if (delta.ay > self.options.length){
-					if (delta.ax /2 < self.options.acceptance) {
-						self.start.x = null;
-						self.start.y = null;
-						$.Dom.fireEvent(self.element, 'swipe', {
-							dir: delta.y > 0? 'down': 'up',
-							target: event.target
-						});
-					}
-				}
+				$.Timeout.clear(self.options.id);
 			}
-		},
-		'end': function(event){
-			event.preventDefault();
-			event.stopPropagation();
-			self.start.x = null;
-			self.start.y = null;
-			$.Timeout.clear(self.options.id);
-		}
+		};
+		$.Dom.addEvent(self.element, 'mousedown', events.start);
+		$.Dom.addEvent(self.element, 'touchstart', events.start);
+		
+		$.Dom.addEvent(self.element, 'mousemove', events.move);
+		$.Dom.addEvent(self.element, 'touchmove', events.move);
+		
+		$.Dom.addEvent(self.element, 'mouseup', events.end);
+		$.Dom.addEvent(self.element, 'mouseleave', events.end);
+		$.Dom.addEvent(self.element, 'touchleave', events.end);
+		$.Dom.addEvent(self.element, 'touchend', events.end);
+		$.Dom.addEvent(self.element, 'touchcancel', events.end);
+	})(this);
+};
+
+$.Gesture.longPress = function (element, options) {
+	if (typeof element == 'string') {
+		element = $.Dom.id(element);
+	}
+	this.element = element;
+	this.options = options || {
+		delay: 750,
+		id: 'longpress-timeout',
 	};
-	$.Dom.addEvent(element, 'mousedown', function(event){
-		events.start(event);
-	});
-	$.Dom.addEvent(element, 'touchstart', function(event){
-		events.start(event);
-	});
-	
-	$.Dom.addEvent(element, 'mousemove', function(event){
-		events.move(event);
-	});
-	$.Dom.addEvent(element, 'touchmove', function(event){
-		events.move(event);
-	});
-	
-	$.Dom.addEvent(element, 'mouseup', function(event){
-		events.end(event);
-	});
-	$.Dom.addEvent(element, 'mouseleave', function(event){
-		events.end(event);
-	});
-	$.Dom.addEvent(element, 'touchleave', function(event){
-		events.end(event);
-	});
-	$.Dom.addEvent(element, 'touchend', function(event){
-		events.end(event);
-	});
-	$.Dom.addEvent(element, 'touchcancel', function(event){
-		events.end(event);
-	});
-}
+	(function(self){
+		var events = {
+			'start': function(event){
+				$.Timeout.set(self.options.id, function(){
+					$.Dom.fireEvent(self.element, 'longpress', {
+						target: self.element
+					});
+				}, self.options.delay);
+			},
+			'end': function(event){
+				$.Timeout.clear(self.options.id);
+			}
+		};
+		
+		$.Dom.addEvent(self.element, 'mousedown', events.start);
+		$.Dom.addEvent(self.element, 'touchstart', events.start);
+		$.Dom.addEvent(self.element, 'mouseup', events.end);
+		$.Dom.addEvent(self.element, 'mouseleave', events.end);
+		$.Dom.addEvent(self.element, 'touchleave', events.end);
+		$.Dom.addEvent(self.element, 'touchend', events.end);
+		$.Dom.addEvent(self.element, 'touchcancel', events.end);
+	})(this);
+};
 
 $.Dom.addEvent(window, 'load', function(){
 	
@@ -141,49 +151,14 @@ $.Dom.addEvent(window, 'load', function(){
 	});
 	
 	// Swipe
-	$.Gesture.swipe(document.body);
+	new $.Gesture.swipe(document.body);
 	$.Dom.addEvent(document.body, 'swipe', function(event){
 		dice.scramble(event.detail.dir);
 	});
-	/*(function(){
-		var start = {
-			x: null,
-			y: null
-		};
-		var prc = 0.60;
-		window.innerHeight
-		$.Dom.addEvent(document.body, 'mousedown', function(event){
-			start.x = event.pageX;
-			start.y = event.pageY;
-		});
-		$.Dom.addEvent(document.body, 'mouseup', function(event){
-			if (window.innerHeight *prc < Math.abs(event.pageY - start.y) || window.innerWidth *prc < Math.abs(event.pageX - start.x)) {
-				dice.scramble();
-			}
-		});
-	})();*/
-	
-	
-	// Long press
-	(function(){
-		var timeout = 'longpress';
-		var delay = 750;
-		$.Dom.addEvent(document.body, 'mousedown', function(event){
-			dice.setRemove(event, timeout);
-			$.Timeout.set(timeout, function(){
-				dice.remove(event);
-				dice.setRemove();
-			}, delay);
-		});
-		$.Dom.addEvent(document.body, 'mouseup', function(event){
-			$.Timeout.clear(timeout);
-			dice.setRemove();
-		});
-	})()
 	
 	// Reload settings on settings open
 	$.Dom.addEvent('index-settings', 'click', function(){
-		$.Dom.id('settings-dicenumber').value = dice.getDiceNumber();
+		$.Dom.id('settings-dicenumber').value = dice.getDiceNumber() || 5;
 	});
 	
 	// Settings done
@@ -191,5 +166,6 @@ $.Dom.addEvent(window, 'load', function(){
 		dice.setDiceNumber($.Dom.id('settings-dicenumber').value);
 	});
 	
+	// Data ready
 	document.body.setAttribute('data-ready', 'true');
 });
