@@ -1,13 +1,15 @@
 
-// TODO: when deleting a die it disappear without transition
-
 /**
  * Constructor
  * param options:
  */
 var PerudoDice = function (options) {
-	this._options = options || {
-		'game-area': document.body
+	this._options = options || {};
+	this._options['game-area'] = options['game-area'] || document.body;
+	this._options['delta'] = options['delta'] || {
+		x: 5,
+		y: 5,
+		a: 360
 	};
 	
 	this._dice = [];
@@ -21,7 +23,8 @@ PerudoDice.prototype.scramble = function (dir) {
 	$.Each(this._dice, function(die){
 		$.Dom.style(die._element, {
 			'top': '-2em',
-			'left': '50%'
+			'left': '50%',
+			'transform': 'rotate(0deg)'
 		});
 	});
 	
@@ -33,8 +36,9 @@ PerudoDice.prototype.scramble = function (dir) {
 		// all dice rolled that value
 		$.Each(self._dice, function(die){
 			$.Dom.style(die._element, {
-				'top': die._position.y,
-				'left': die._position.x
+				'top': (die._position.y +((Math.random() *2 -1) *self._options.delta.y))+'%',
+				'left': (die._position.x +((Math.random() *2 -1) *self._options.delta.x))+'%',
+				'transform': 'rotate('+((Math.random() *2 -1) *self._options.delta.a)+'deg)'
 			});
 		});
 	}, 1000);
@@ -84,24 +88,24 @@ PerudoDice.prototype.setDiceNumber = function(value) {
 	this._dice = [];
 	var position = [
 		{
-			x: '25%',
-			y: '25%'
+			x: 25,
+			y: 25
 		},
 		{
-			x: '25%',
-			y: '75%'
+			x: 25,
+			y: 75
 		},
 		{
-			x: '75%',
-			y: '25%'
+			x: 75,
+			y: 25
 		},
 		{
-			x: '75%',
-			y: '75%'
+			x: 75,
+			y: 75
 		},
 		{
-			x: '50%',
-			y: '50%'
+			x: 50,
+			y: 50
 		}
 	];
 	var self = this;
@@ -123,8 +127,8 @@ var Die = function(index, position) {
 		'data-index': index
 	});
 	$.Dom.style(this._element, {
-		'top': position.y,
-		'left': position.x
+		'top': position.y+'%',
+		'left': position.x+'%'
 	});
 	this.setValue(1);
 }
