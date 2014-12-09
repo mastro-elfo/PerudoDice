@@ -2,15 +2,15 @@
 	"name": "Perudo Dice",
 	"version": "0.0",
 	"description": "Roll dice to play the game perudo on your device",
-	"launch_path": "/Perudo/index.html",
+	"launch_path": "/PerudoDice/index.html",
 	"icons": {
-		"32": "/Perudo/img/toco-32.png",
-		"60": "/Perudo/img/toco-60.png",
-		"64": "/Perudo/img/toco-64.png",
-		"90": "/Perudo/img/toco-90.png",
-		"128": "/Perudo/img/toco-128.png",
-		"256": "/Perudo/img/toco-256.png",
-		"512": "/Perudo/img/toco-512.png"
+		"32": "/PerudoDice/img/toco-32.png",
+		"60": "/PerudoDice/img/toco-60.png",
+		"64": "/PerudoDice/img/toco-64.png",
+		"90": "/PerudoDice/img/toco-90.png",
+		"128": "/PerudoDice/img/toco-128.png",
+		"256": "/PerudoDice/img/toco-256.png",
+		"512": "/PerudoDice/img/toco-512.png"
 	},
 	"developer": {
 		"name": "Francesco Michienzi",
