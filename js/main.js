@@ -1,7 +1,7 @@
 
-
 // TODO: add to dollar
-// TODO: bug when set up new dice number when there are no more dice
+// TODO: add some randomness to dice position and angle
+
 $.Gesture = {};
 $.Gesture.swipe = function (element, options) {
 	if (typeof element == 'string') {
