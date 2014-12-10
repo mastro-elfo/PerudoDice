@@ -3,7 +3,7 @@
 	"version": "0.0",
 	"description": "Roll dice to play the game perudo on your device",
 	"launch_path": "/PerudoDice/index.html",
-	"appcache_path": "/PerudoDice/data.appcache"
+	"appcache_path": "/PerudoDice/data.appcache",
 	"icons": {
 		"32": "/PerudoDice/img/toco-32.png",
 		"60": "/PerudoDice/img/toco-60.png",
