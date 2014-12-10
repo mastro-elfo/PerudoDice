@@ -1,8 +1,8 @@
 
-Under development
+Introduction
 =================
 
-**PerudoDice** is a web-app to play Perudo game. This is not the game! This app lets you roll dice to play Perudo.
+**PerudoDice** is a web-app for Firefox and Firefox OS to play Perudo game. This is not the game! This app lets you roll dice to play Perudo.
 
 How to
 ======
