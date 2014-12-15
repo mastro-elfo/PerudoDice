@@ -166,6 +166,23 @@ $.Dom.addEvent(window, 'load', function(){
 		dice.setDiceNumber($.Dom.id('settings-dicenumber').value);
 	});
 	
+	// Dice number input
+	// Avoid non numbers
+	$.Dom.addEvent('settings-dicenumber', 'keydown', function(event){
+		// Allow: backspace, tab, enter, escape, delete, end/home, arrows, F1/.../F12
+		if ([8, 9, 13, 27, 46, 110, 35, 36, 37, 38, 39, 40, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123].indexOf(event.keyCode) != -1) {
+			return;
+		}
+		// Allow Ctrl+A: select all
+		if (event.keyCode == 65 && event.ctrlKey === true) {
+			return;
+		}
+		// Prevent typing non numbers
+		if (event.shiftKey && (event.keyCode < 96 || event.keyCode > 105) || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+			event.preventDefault();
+		}
+	});
+	
 	// Data ready
 	document.body.setAttribute('data-ready', 'true');
 });
