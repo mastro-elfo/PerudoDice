@@ -1,7 +1,7 @@
 {
 	"name": "Perudo Dice",
 	"version": "0.0",
-	"description": "Roll dice to play the game perudo on your device",
+	"description": "Roll dice to play the game perudo using your device. This is not the game Perudo. The app let you roll dice and remove them.",
 	"launch_path": "/PerudoDice/index.html",
 	"appcache_path": "/PerudoDice/data.appcache",
 	"icons": {
