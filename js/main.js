@@ -163,44 +163,48 @@ $.Dom.addEvent(window, 'load', function(){
 	
 	// Settings done
 	$.Dom.addEvent('settings-done', 'click', function(){
-		dice.setDiceNumber($.Dom.id('settings-dicenumber').value);
+		dice.setDiceNumber(parseInt($.Dom.id('settings-dicenumber').value) || 5);
 	});
 	
 	// Dice number input
 	// Avoid non numbers
-	$.Dom.addEvent('settings-dicenumber', 'keydown', function(event){
-		// Allow: backspace, tab, enter, escape, delete, end/home, arrows, F1/.../F12
-		if ([8, 9, 13, 27, 46, 110, 35, 36, 37, 38, 39, 40, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123].indexOf(event.keyCode) != -1) {
-			return;
-		}
-		// Allow Ctrl+A: select all
-		if (event.keyCode == 65 && event.ctrlKey === true) {
-			return;
-		}
-		// Prevent typing non numbers
-		if (event.shiftKey && (event.keyCode < 96 || event.keyCode > 105) || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
-			event.preventDefault();
-		}
-	});
+	//$.Dom.addEvent('settings-dicenumber', 'keydown', function(event){
+	//	// Allow: backspace, tab, enter, escape, delete, end/home, arrows, F1/.../F12
+	//	if ([8, 9, 13, 27, 46, 110, 35, 36, 37, 38, 39, 40, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123].indexOf(event.keyCode) != -1) {
+	//		return;
+	//	}
+	//	// Allow Ctrl+A: select all
+	//	if (event.keyCode == 65 && event.ctrlKey === true) {
+	//		return;
+	//	}
+	//	// Prevent typing non numbers
+	//	if (event.shiftKey && (event.keyCode < 96 || event.keyCode > 105) || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+	//		event.preventDefault();
+	//	}
+	//});
 	
 	// Watch tutorial again
 	$.Dom.addEvent('settings-tutorial', 'click', function(){
-		$.Storage.set('tutorial', false);
-		location.reload();
+		// $.Storage.set('tutorial', false);
+		// location.reload();
+		$.Each($.Dom.children('index', 'div', 'tutorial'), function(item){
+			$.Dom.removeClass(item, 'hidden');
+		});
 	});
 	
 	// Load Storage.tutorial
 	var tutorial = $.Storage.get('tutorial');
-	if (!tutorial) {
-		$.Each($.Dom.children('index', 'div', 'tutorial'), function(item){
+	
+	$.Each($.Dom.children('index', 'div', 'tutorial'), function(item){
+		if (!tutorial) {
 			$.Dom.removeClass(item, 'hidden');
-			$.Dom.addEvent(item, 'click', function(event){
-				$.Dom.addClass(event.currentTarget, 'hidden');
-			});
+		}
+		$.Dom.addEvent(item, 'click', function(event){
+			$.Dom.addClass(event.currentTarget, 'hidden');
 		});
-		
-		$.Storage.set('tutorial', true);
-	}
+	});
+	
+	$.Storage.set('tutorial', true);
 	
 	// Data ready
 	document.body.setAttribute('data-ready', 'true');
