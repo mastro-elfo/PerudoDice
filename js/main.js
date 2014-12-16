@@ -183,6 +183,25 @@ $.Dom.addEvent(window, 'load', function(){
 		}
 	});
 	
+	// Watch tutorial again
+	$.Dom.addEvent('settings-tutorial', 'click', function(){
+		$.Storage.set('tutorial', false);
+		location.reload();
+	});
+	
+	// Load Storage.tutorial
+	var tutorial = $.Storage.get('tutorial');
+	if (!tutorial) {
+		$.Each($.Dom.children('index', 'div', 'tutorial'), function(item){
+			$.Dom.removeClass(item, 'hidden');
+			$.Dom.addEvent(item, 'click', function(event){
+				$.Dom.addClass(event.currentTarget, 'hidden');
+			});
+		});
+		
+		$.Storage.set('tutorial', true);
+	}
+	
 	// Data ready
 	document.body.setAttribute('data-ready', 'true');
 });

@@ -2,6 +2,7 @@
 <html manifest="data.appcache">
 	<head>
 		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="css/resources/buttons.css"/>
 		<link rel="stylesheet" href="css/resources/gaia-icons-embedded.css"/>
 		<link rel="stylesheet" href="css/resources/headers.css"/>
 		<link rel="stylesheet" href="css/resources/input_areas.css"/>
@@ -21,6 +22,21 @@
 				</menu>
 			</header>
 			<article></article>
+			<div id="index-tutorial-1" class="tutorial hidden">
+				<div class="message">Swipe in one direction to roll the dice</div>
+				<img src="img/arrows.svg" alt=""/>
+				<div class="continue">Click to continue</div>
+			</div>
+			<div id="index-tutorial-2" class="tutorial hidden">
+				<div class="message">Long press on a die to remove it</div>
+				<img src="img/hand.svg" alt=""/>
+				<div class="continue">Click to continue</div>
+			</div>
+			<div id="index-tutorial-3" class="tutorial hidden">
+				<div class="message">Open settings to set dice number or watch this tutorial again</div>
+				<img src="img/" alt=""/>
+				<div class="continue">Click to continue</div>
+			</div>
 		</section>
 		<section id="settings" role="region" class="vbox fit scroll">
 			<header>
@@ -36,6 +52,14 @@
 					</header>
 					<ul>
 						<li><input id="settings-dicenumber" type="number" value="" placeholder="" data-l10n="settings-dicenumber" min="0" max="5"/></li>
+					</ul>
+				</article>
+				<article>
+					<header>Tutorial</header>
+					<ul>
+						<li>
+							<button id="settings-tutorial">Watch tutorial</button>
+						</li>
 					</ul>
 				</article>
 			</section>
