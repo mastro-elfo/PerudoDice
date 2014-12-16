@@ -12,6 +12,7 @@
 		<script type="text/javascript" src="js/dollar/dollar.nc.js"></script>
 		<script type="text/javascript" src="js/Page.js"></script>
 		<script type="text/javascript" src="js/perudo-dice.js"></script>
+		<script type="text/javascript" src="js/l10n.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body role="application">
@@ -23,26 +24,26 @@
 			</header>
 			<article></article>
 			<div id="index-tutorial-1" class="tutorial hidden">
-				<div class="message">Swipe in one direction to roll the dice</div>
+				<div class="message" data-l10n="tutorial-1-message">Swipe in one direction to roll the dice</div>
 				<img src="img/arrows.svg" alt=""/>
-				<div class="continue">Click to continue</div>
+				<div class="continue" data-l10n="click-to-continue">Click to continue</div>
 			</div>
 			<div id="index-tutorial-2" class="tutorial hidden">
-				<div class="message">Long press on a die to remove it</div>
+				<div class="message" data-l10n="tutorial-2-message">Long press on a die to remove it</div>
 				<img src="img/hand.svg" alt=""/>
-				<div class="continue">Click to continue</div>
+				<div class="continue" data-l10n="click-to-continue">Click to continue</div>
 			</div>
 			<div id="index-tutorial-3" class="tutorial hidden">
-				<div class="message">Open settings to set dice number or watch this tutorial again</div>
+				<div class="message" data-l10n="tutorial-3-message">Open settings to set dice number or watch this tutorial again</div>
 				<img src="img/" alt=""/>
-				<div class="continue">Click to continue</div>
+				<div class="continue" data-l10n="click-to-continue">Click to continue</div>
 			</div>
 		</section>
 		<section id="settings" role="region" class="vbox fit scroll">
 			<header>
 				<a href="#" data-goback=""><span class="icon icon-back">go back</span></a>
 				<menu type="toolbar">
-					<button id="settings-done" data-goback="">done</button>
+					<button id="settings-done" data-goback="" data-l10n="done">done</button>
 				</menu>
 			</header>
 			<section class="gaia-list fit scroll sticky">
@@ -55,10 +56,10 @@
 					</ul>
 				</article>
 				<article>
-					<header>Tutorial</header>
+					<header data-l10n="settings-tutorial-header">Tutorial</header>
 					<ul>
 						<li>
-							<button id="settings-tutorial">Watch tutorial</button>
+							<button id="settings-tutorial" data-goback="" data-l10n="settings-watch-tutorial">Watch tutorial</button>
 						</li>
 					</ul>
 				</article>
