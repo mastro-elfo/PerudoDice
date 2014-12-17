@@ -140,7 +140,7 @@ body {
 
 /* Tutorials */
 .tutorial {
-	position: absolute;
+	position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -149,6 +149,10 @@ body {
   z-index: 10;
   opacity: 1;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+  user-select: none;
+  -moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 .tutorial.hidden {
 	opacity: 0;
@@ -205,6 +209,8 @@ body {
   top: 0;
   right: 0;
 }
+
+
 
 
 

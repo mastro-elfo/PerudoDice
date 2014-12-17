@@ -151,9 +151,11 @@ $.Dom.addEvent(window, 'load', function(){
 	});
 	
 	// Swipe
-	new $.Gesture.swipe(document.body);
-	$.Dom.addEvent(document.body, 'swipe', function(event){
-		dice.scramble(event.detail.dir);
+	new $.Gesture.swipe($.Dom.id('index'));
+	$.Dom.addEvent($.Dom.id('index'), 'swipe', function(event){
+		if (!$.Dom.select('.tutorial:not(.hidden)').length) {
+			dice.scramble(event.detail.dir);
+		}
 	});
 	
 	// Reload settings on settings open
