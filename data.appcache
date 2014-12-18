@@ -1,8 +1,62 @@
 CACHE MANIFEST
-# 17/12/14 17:58
 
-index.html
-js/*
-css/*
-img/*
-favicon.ico
+#version 1.0 12-18-2014
+
+CACHE:
+
+#images
+http://mastro-elfo.github.io/PerudoDice/img/
+http://mastro-elfo.github.io/PerudoDice/img/arrows.svg
+http://mastro-elfo.github.io/PerudoDice/img/hand.svg
+http://mastro-elfo.github.io/PerudoDice/img/arrows.svg
+http://mastro-elfo.github.io/PerudoDice/favicon.ico
+
+#internal HTML documents
+http://mastro-elfo.github.io/PerudoDice/
+
+#style sheets
+http://mastro-elfo.github.io/PerudoDice/css/perudo-dice.css
+http://mastro-elfo.github.io/PerudoDice/css/resources/buttons.css
+http://mastro-elfo.github.io/PerudoDice/css/resources/gaia-icons-embedded.css
+http://mastro-elfo.github.io/PerudoDice/css/resources/headers.css
+http://mastro-elfo.github.io/PerudoDice/css/resources/input_areas.css
+http://mastro-elfo.github.io/PerudoDice/css/resources/layout.css
+
+#style sheet images
+"body-texture.jpg"
+"buttons/images/next.png"
+"headers/images/icons/add.png"
+"headers/images/icons/back.png"
+"headers/images/icons/close.png"
+"headers/images/icons/compose.png"
+"headers/images/icons/down.png"
+"headers/images/icons/edit.png"
+"headers/images/icons/menu.png"
+"headers/images/icons/options.png"
+"headers/images/icons/organic/add.png"
+"headers/images/icons/organic/back.png"
+"headers/images/icons/organic/close.png"
+"headers/images/icons/organic/edit.png"
+"headers/images/icons/send.png"
+"headers/images/icons/up.png"
+"headers/images/icons/user.png"
+"input_areas/images/clear.png"
+"input_areas/images/clear_dark.png"
+"input_areas/images/dialog.svg"
+"input_areas/images/dialog_active.svg"
+"input_areas/images/dialog_disabled.svg"
+"input_areas/images/dialog_disabled_rtl.svg"
+"input_areas/images/dialog_rtl.svg"
+"input_areas/images/search.svg"
+"input_areas/images/search_dark.svg"
+"toco.svg"
+
+#javascript files
+http://mastro-elfo.github.io/PerudoDice/js/dollar/dollar.nc.js
+http://mastro-elfo.github.io/PerudoDice/js/Page.js
+http://mastro-elfo.github.io/PerudoDice/js/perudo-dice.js
+http://mastro-elfo.github.io/PerudoDice/js/l10n.js
+http://mastro-elfo.github.io/PerudoDice/js/main.js
+
+NETWORK:
+*
