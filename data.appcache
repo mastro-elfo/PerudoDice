@@ -1,62 +1,61 @@
 CACHE MANIFEST
 
-#version 1.0 12-18-2014
+#version 1.1 12-18-2014
 
 CACHE:
 
 #images
-http://mastro-elfo.github.io/PerudoDice/img/
-http://mastro-elfo.github.io/PerudoDice/img/arrows.svg
-http://mastro-elfo.github.io/PerudoDice/img/hand.svg
-http://mastro-elfo.github.io/PerudoDice/img/arrows.svg
-http://mastro-elfo.github.io/PerudoDice/favicon.ico
+img/arrows.svg
+img/hand.svg
+img/arrows.svg
+favicon.ico
 
 #internal HTML documents
-http://mastro-elfo.github.io/PerudoDice/
+
 
 #style sheets
-http://mastro-elfo.github.io/PerudoDice/css/perudo-dice.css
-http://mastro-elfo.github.io/PerudoDice/css/resources/buttons.css
-http://mastro-elfo.github.io/PerudoDice/css/resources/gaia-icons-embedded.css
-http://mastro-elfo.github.io/PerudoDice/css/resources/headers.css
-http://mastro-elfo.github.io/PerudoDice/css/resources/input_areas.css
-http://mastro-elfo.github.io/PerudoDice/css/resources/layout.css
+css/perudo-dice.css
+css/resources/buttons.css
+css/resources/gaia-icons-embedded.css
+css/resources/headers.css
+css/resources/input_areas.css
+css/resources/layout.css
 
 #style sheet images
-"body-texture.jpg"
-"buttons/images/next.png"
-"headers/images/icons/add.png"
-"headers/images/icons/back.png"
-"headers/images/icons/close.png"
-"headers/images/icons/compose.png"
-"headers/images/icons/down.png"
-"headers/images/icons/edit.png"
-"headers/images/icons/menu.png"
-"headers/images/icons/options.png"
-"headers/images/icons/organic/add.png"
-"headers/images/icons/organic/back.png"
-"headers/images/icons/organic/close.png"
-"headers/images/icons/organic/edit.png"
-"headers/images/icons/send.png"
-"headers/images/icons/up.png"
-"headers/images/icons/user.png"
-"input_areas/images/clear.png"
-"input_areas/images/clear_dark.png"
-"input_areas/images/dialog.svg"
-"input_areas/images/dialog_active.svg"
-"input_areas/images/dialog_disabled.svg"
-"input_areas/images/dialog_disabled_rtl.svg"
-"input_areas/images/dialog_rtl.svg"
-"input_areas/images/search.svg"
-"input_areas/images/search_dark.svg"
-"toco.svg"
+css/body-texture.jpg
+css/resources/buttons/images/next.png
+css/resources/headers/images/icons/add.png
+css/resources/headers/images/icons/back.png
+css/resources/headers/images/icons/close.png
+css/resources/headers/images/icons/compose.png
+css/resources/headers/images/icons/down.png
+css/resources/headers/images/icons/edit.png
+css/resources/headers/images/icons/menu.png
+css/resources/headers/images/icons/options.png
+css/resources/headers/images/icons/organic/add.png
+css/resources/headers/images/icons/organic/back.png
+css/resources/headers/images/icons/organic/close.png
+css/resources/headers/images/icons/organic/edit.png
+css/resources/headers/images/icons/send.png
+css/resources/headers/images/icons/up.png
+css/resources/headers/images/icons/user.png
+css/resources/input_areas/images/clear.png
+css/resources/input_areas/images/clear_dark.png
+css/resources/input_areas/images/dialog.svg
+css/resources/input_areas/images/dialog_active.svg
+css/resources/input_areas/images/dialog_disabled.svg
+css/resources/input_areas/images/dialog_disabled_rtl.svg
+css/resources/input_areas/images/dialog_rtl.svg
+css/resources/input_areas/images/search.svg
+css/resources/input_areas/images/search_dark.svg
+css/toco.svg
 
 #javascript files
-http://mastro-elfo.github.io/PerudoDice/js/dollar/dollar.nc.js
-http://mastro-elfo.github.io/PerudoDice/js/Page.js
-http://mastro-elfo.github.io/PerudoDice/js/perudo-dice.js
-http://mastro-elfo.github.io/PerudoDice/js/l10n.js
-http://mastro-elfo.github.io/PerudoDice/js/main.js
+js/dollar/dollar.nc.js
+js/Page.js
+js/perudo-dice.js
+js/l10n.js
+js/main.js
 
 NETWORK:
 *
