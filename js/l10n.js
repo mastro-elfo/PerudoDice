@@ -21,6 +21,17 @@ $.L10n._strings.en = {
 	'settings-watch-tutorial': 'Watch tutorial'
 };
 
+$.L10n._strings.es = {
+	'click-to-continue': 'Haga clic para continuar',
+	'tutorial-1-message': 'Pase en una dirección para rodar los dados',
+	'tutorial-2-message': 'Pulsación larga en un dado para eliminarla',
+	'tutorial-3-message': 'Open settings para ajustar el número de dados o ver este tutorial de nuevo',
+	'done': 'hecho',
+	'settings-dicenumber-header': 'Número de dados',
+	'settings-tutorial-header': 'Tutorial',
+	'settings-watch-tutorial': 'Reloj tutorial'
+};
+
 $.L10n._strings.it = {
 	'click-to-continue': 'Clicca per continuare',
 	'tutorial-1-message': 'Swipe in una direzione per lanciare i dadi',
@@ -30,4 +41,26 @@ $.L10n._strings.it = {
 	'settings-dicenumber-header': 'Numero di dadi',
 	'settings-tutorial-header': 'Tutorial',
 	'settings-watch-tutorial': 'Guarda il tutorial'
+};
+
+$.L10n._strings.pt = {
+	'click-to-continue': 'Clique para continuar',
+	'tutorial-1-message': 'Passe em uma direção para rolar dados',
+	'tutorial-2-message': 'Pressione e segure em um molde para removê-lo',
+	'tutorial-3-message': 'Abrir configurações para definir número de dados ou assista a este tutorial novamente',
+	'done': 'feito',
+	'settings-dicenumber-header': 'Número Dice',
+	'settings-tutorial-header': 'Tutorial',
+	'settings-watch-tutorial': 'Assista tutorial'
+};
+
+$.L10n._strings.ru = {
+	'click-to-continue': 'Нажмите, чтобы продолжить',
+	'tutorial-1-message': 'Проведите в одном направлении Бросить кости',
+	'tutorial-2-message': 'Длительное нажатие на головку, чтобы удалить его',
+	'tutorial-3-message': 'Откройте настройки для установки в кости номера или посмотреть этот учебник снова',
+	'done': 'сделано',
+	'settings-dicenumber-header': 'количество Dice',
+	'settings-tutorial-header': 'учебник',
+	'settings-watch-tutorial': 'часы учебник'
 };

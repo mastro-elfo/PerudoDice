@@ -165,7 +165,7 @@ body {
   text-align: center;
   width: 100%;
   height: 5rem;
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 5rem;
 }
 
@@ -180,7 +180,7 @@ body {
   text-align: center;
   width: 80%;
   height: 5rem;
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 5rem;
 }
 .tutorial img {
@@ -209,6 +209,8 @@ body {
   top: 0;
   right: 0;
 }
+
+
 
 
 

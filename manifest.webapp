@@ -1,6 +1,6 @@
 {
 	"name": "Perudo Dice",
-	"version": "0.0",
+	"version": "0.1",
 	"description": "Roll dice to play the game perudo using your device. This is not the game Perudo. The app let you roll dice and remove them.",
 	"launch_path": "/PerudoDice/index.html",
 	"appcache_path": "/PerudoDice/data.appcache",
@@ -18,5 +18,15 @@
 		"url": "http://mastro-elfo.github.io"
 	},
 	"default_locale": "en",
-	"type": "web"
+	"type": "web",
+	"locales": {
+		"en": {
+				"name": "Perudo Dice",
+				"description": "Roll dice to play the game perudo using your device. This is not the game Perudo. The app let you roll dice and remove them."
+		},
+		"it": {
+			"name": "Dadi Perudo",
+			"description": "Lancia i dadi per giocare a Perudo. Questo non è il gioco Perudo, l'app ti consente di tirare i dadi e rimuoverli dal gioco"
+		}
+	}
 }

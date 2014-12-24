@@ -161,6 +161,9 @@ $.Dom.addEvent(window, 'load', function(){
 	// Reload settings on settings open
 	$.Dom.addEvent('index-settings', 'click', function(){
 		$.Dom.id('settings-dicenumber').value = dice.getDiceNumber() || 5;
+		setTimeout(function(){
+			$.Dom.id('settings-dicenumber').select();
+		}, 250);
 	});
 	
 	// Settings done

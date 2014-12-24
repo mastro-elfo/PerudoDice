@@ -1,13 +1,20 @@
 CACHE MANIFEST
 
-#version 1.1 12-18-2014
+#version 0.1.1 12-24-2014
 
 CACHE:
 
 #images
 img/arrows.svg
 img/hand.svg
-img/arrows.svg
+img/toco.svg
+img/toco-512.png
+img/toco-256.png
+img/toco-128.png
+img/toco-90.png
+img/toco-64.png
+img/toco-60.png
+img/toco-32.png
 favicon.ico
 
 #internal HTML documents
