@@ -21,6 +21,17 @@ $.L10n._strings.en = {
 	'settings-watch-tutorial': 'Watch tutorial'
 };
 
+$.L10n._strings.fr = {
+	'click-to-continue': 'Cliquez pour continuer',
+	'tutorial-1-message': 'Glissez dans une direction pour lancer les dés',
+	'tutorial-2-message': 'Long press on a die to remove it',
+	'tutorial-3-message': 'Un appui long sur une filière pour l\'enlever',
+	'done': 'fini',
+	'settings-dicenumber-header': 'Nombre de dés',
+	'settings-tutorial-header': 'Tutorial',
+	'settings-watch-tutorial': 'Montre tutorial'
+};
+
 $.L10n._strings.es = {
 	'click-to-continue': 'Haga clic para continuar',
 	'tutorial-1-message': 'Pase en una dirección para rodar los dados',
