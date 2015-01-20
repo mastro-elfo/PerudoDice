@@ -1,22 +1,52 @@
 {
-	"name": "Perudo Dice",
-	"version": "0.0",
-	"description": "Roll dice to play the game perudo using your device. This is not the game Perudo. The app let you roll dice and remove them.",
-	"launch_path": "/PerudoDice/index.html",
-	"appcache_path": "/PerudoDice/data.appcache",
-	"icons": {
-		"32": "/PerudoDice/img/toco-32.png",
-		"60": "/PerudoDice/img/toco-60.png",
-		"64": "/PerudoDice/img/toco-64.png",
-		"90": "/PerudoDice/img/toco-90.png",
-		"128": "/PerudoDice/img/toco-128.png",
-		"256": "/PerudoDice/img/toco-256.png",
-		"512": "/PerudoDice/img/toco-512.png"
-	},
-	"developer": {
-		"name": "Francesco Michienzi",
-		"url": "http://mastro-elfo.github.io"
-	},
-	"default_locale": "en",
-	"type": "web"
+		"name": "Perudo Dice",
+		"version": "0.1",
+		"description": "Roll dice to play the game perudo using your device. This is not the game Perudo. The app let you roll dice and remove them.",
+		"launch_path": "/PerudoDice/index.html",
+		"appcache_path": "/PerudoDice/data.appcache",
+		"icons": {
+				"32": "/PerudoDice/img/toco-32.png",
+				"60": "/PerudoDice/img/toco-60.png",
+				"64": "/PerudoDice/img/toco-64.png",
+				"90": "/PerudoDice/img/toco-90.png",
+				"128": "/PerudoDice/img/toco-128.png",
+				"256": "/PerudoDice/img/toco-256.png",
+				"512": "/PerudoDice/img/toco-512.png"
+		},
+		"developer": {
+				"name": "Francesco Michienzi",
+				"url": "http://mastro-elfo.github.io"
+		},
+		"default_locale": "en",
+		"type": "web",
+		"locales": {
+				"de": {
+						"name": "Perudo Würfel",
+						"description": "Würfeln, um das Spiel zu spielen Perudo der Verwendung des Geräts. Dies ist nicht das Spiel Perudo. Die App können Sie würfeln und zu entfernen."
+				},
+				"en": {
+						"name": "Perudo Dice",
+						"description": "Roll dice to play the game perudo using your device. This is not the game Perudo. The app let you roll dice and remove them."
+				},
+				"es": {
+						"name": "Perudo dados",
+						"description": "Tirada de dados para jugar el Perudo juego usando su dispositivo. Este no es el juego Perudo. La aplicación le permite rodar los dados y los elimine."
+				},
+				"fr": {
+						"name": "Perudo cubes",
+						"description": "Rouler les dés pour jouer le Perudo de jeu en utilisant votre appareil. Ce ne est pas le jeu Perudo. L'application vous permet de rouler les dés et les supprimer."
+				},
+				"it": {
+						"name": "Dadi Perudo",
+						"description": "Lancia i dadi per giocare a Perudo. Questo non è il gioco Perudo, l'app ti consente di tirare i dadi e rimuoverli dal gioco"
+				},
+				"pt": {
+						"name": "Perudo dados",
+						"description": "Rolar dados para jogar o perudo jogo usando seu dispositivo. Este não é o jogo Perudo. O aplicativo deixá-lo rolar dados e removê-los."
+				},
+				"ru": {
+						"name": "Perudo игра в кости",
+						"description": "Ролл кости, чтобы играть в эту игру perudo использовании устройства. Это не игра Perudo.Приложение позволит вам свернуть кости и удалить их."
+				},
+		}
 }
