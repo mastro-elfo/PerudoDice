@@ -134,6 +134,7 @@ $.Dom.addEvent(window, 'load', function(){
 	
 	// Add 'goto' events
 	$.Each(document.body.querySelectorAll('[data-goto]'), function(item){
+		$.Dom.addClass(item, 'pointer');
 		$.Dom.addEvent(item, 'click', function(event){
 			Page.open(event.target.getAttribute('data-goto'));
 		});
@@ -141,6 +142,7 @@ $.Dom.addEvent(window, 'load', function(){
 	
 	// Add 'goback' events
 	$.Each(document.body.querySelectorAll('[data-goback]'), function(item){
+		$.Dom.addClass(item, 'pointer');
 		$.Dom.addEvent(item, 'click', function(event){
 			Page.back();
 		});
@@ -170,6 +172,7 @@ $.Dom.addEvent(window, 'load', function(){
 	$.Dom.addEvent('settings-done', 'click', function(){
 		dice.setDiceNumber(parseInt($.Dom.id('settings-dicenumber').value) || 5);
 	});
+	$.Dom.addClass('settings-done', 'pointer');
 	
 	// Dice number input
 	// Avoid non numbers
