@@ -1,13 +1,12 @@
 CACHE MANIFEST
 
-#version 0.1.3 20-01-2015
+#version 0.1.3 21-01-2015
 
 CACHE:
 
 #images
 img/arrows.svg
 img/hand.svg
-img/toco.svg
 img/toco-512.png
 img/toco-256.png
 img/toco-128.png
