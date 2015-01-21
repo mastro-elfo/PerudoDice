@@ -59,11 +59,14 @@ body {
   -moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
-  background: #f0c68c url('body-texture.jpg');
+  background: #AD7135 url('body-texture.jpg');
 }
 
 .hidden {
 	visibility: hidden;
+}
+.pointer {
+	cursor: pointer;
 }
 
 .die {
@@ -177,6 +180,7 @@ body {
   text-align: center;
   height: 5rem;
   padding: 0 5rem;
+  width: calc(100% - 10rem);
 }
 
 .tutorial .continue,
@@ -229,12 +233,8 @@ body {
 }
 
 
-
-
-
-
-
-
-
+section[role="region"] > header:first-child button {
+  color: white;
+}
 
 
